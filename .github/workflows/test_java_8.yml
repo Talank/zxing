@@ -2,7 +2,7 @@ name: Test Java 8
 
 on:
   push:
-    branches: [ master ]
+
   pull_request:
     branches: [ master ]
 
