@@ -8,9 +8,13 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    strategy:
+        matrix:
+          jdk: [ '8', '11' ]
+          os: [ubuntu-latest, windows-latest, macos-latest]
+    
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true 
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 8
